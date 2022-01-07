@@ -17,7 +17,8 @@ https://www.genomatix.de/online_help/help_dialign/dialign2_help.html
 http://lingpy.org/reference/lingpy.align.html
 
 > Algorithm details (FR)
-https://wikis.univ-lille.fr/bilille/_media/ib2019-2-partie2-alignement.pdf
+https://wikis.univ-lille.fr/bilille/_media/ib2019-2-partie2-alignement.pdf (p. 61)
+https://tel.archives-ouvertes.fr/tel-00352784/document (p. 69)
 '''
 
 
