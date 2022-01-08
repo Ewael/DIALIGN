@@ -1,6 +1,6 @@
 class Sequence:
     '''
-    Class to handle properly sequence name and the sequence itself
+    Class to properly handle sequences
 
     name : str
         Name of the sequence

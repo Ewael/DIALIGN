@@ -22,6 +22,8 @@ https://tel.archives-ouvertes.fr/tel-00352784/document (p. 69)
 
 import sys
 
+from colors import INFO
+from fragment import get_fragments
 from sequence import parse_sequences
 
 
@@ -33,8 +35,16 @@ def main():
 
     # parse file to obtain sequences
     seqs = parse_sequences(sys.argv[1])
+
+    print(f'{INFO} Parsed sequences:')
     for seq in seqs:
         print(seq.name, seq.seq)
+
+    # fragments detection
+    fragments = get_fragments(seqs)
+
+    for frag in fragments:
+        print(frag.len, frag.seq1, frag.seq2)
 
 
 if __name__ == '__main__':
