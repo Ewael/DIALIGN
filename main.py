@@ -22,7 +22,8 @@ https://tel.archives-ouvertes.fr/tel-00352784/document (p. 69)
 
 import sys
 
-from colors import INFO
+from colors import INFO, SUCCESS
+from dialign import dialign
 from fragment import get_fragments
 from sequence import parse_sequences
 
@@ -35,16 +36,19 @@ def main():
 
     # parse file to obtain sequences
     seqs = parse_sequences(sys.argv[1])
-
-    print(f'{INFO} Parsed sequences:')
-    for seq in seqs:
-        print(seq.name, seq.seq)
+    print(f'{INFO} Parsed {len(seqs)} sequences')
 
     # fragments detection
     fragments = get_fragments(seqs)
+    print(f'{INFO} Found {len(fragments)} fragments')
 
-    for frag in fragments:
-        print(frag.len, frag.seq1, frag.seq2)
+    # alignment building
+    aligned_seqs = dialign(seqs, fragments)
+    print(f'{INFO} Aligned sequences according to found fragments')
+
+    print(f'{SUCCESS} DIALIGN result:')
+    for seq in aligned_seqs:
+        print(f'{seq.name}\t{seq.seq}')
 
 
 if __name__ == '__main__':

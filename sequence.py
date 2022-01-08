@@ -15,11 +15,12 @@ class Sequence:
 
 def parse_sequences(filename: str) -> list[Sequence]:
     '''
-    Parse input file into a list of `Sequence` objects
+    Parse input file into a list of `Sequence` objects sorted by sequence length
     '''
     seqs = []
     with open(filename) as f:
         content = f.read()
+
     # we ignore the first element as it should always be an empty string
     for chunk in content.split('>')[1:]:
         # `name` is the first line
@@ -27,4 +28,7 @@ def parse_sequences(filename: str) -> list[Sequence]:
         # `seq` is all the following lines in the chunk
         seq = ''.join(chunk.splitlines()[1:])
         seqs.append(Sequence(name, seq))
+
+    # sort before return
+    seqs.sort(key=lambda x: len(x.seq), reverse=True)
     return seqs
