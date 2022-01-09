@@ -1,5 +1,5 @@
-from sequence import Sequence
-from fragment import Fragment
+from src.sequence import Sequence
+from src.fragment import Fragment
 
 
 def dialign(seqs: list[Sequence], frags: list[Fragment]) -> list[Sequence]:

@@ -1,6 +1,6 @@
 from difflib import SequenceMatcher
 
-from sequence import Sequence
+from src.sequence import Sequence
 
 
 class Fragment:

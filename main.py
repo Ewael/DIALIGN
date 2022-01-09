@@ -22,10 +22,10 @@ https://tel.archives-ouvertes.fr/tel-00352784/document (p. 69)
 
 import sys
 
-from colors import INFO, SUCCESS
-from dialign import dialign
-from fragment import get_fragments
-from sequence import parse_sequences
+from src.colors import INFO, SUCCESS
+from src.dialign import dialign
+from src.fragment import get_fragments
+from src.sequence import parse_sequences
 
 
 def main():
